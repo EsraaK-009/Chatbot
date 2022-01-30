@@ -8,6 +8,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 from actions.country import check_country
+from actions.converter import convert
 
 class ActionCapital(Action):
 
@@ -61,7 +62,9 @@ class ActionPopulation(Action):
                     response = requests.post(client_pop, json ={'country':country})
                     if response.json()['success']==1:
                          population = response.json()['body']['population']
-                         dispatcher.utter_message(text=f"There are {population} person living in {country}. Tell me if you want to know more.")  		
+                         # this function to convert lakhs & crocres to an understandable values.
+                         number= convert(population)/10**6
+                         dispatcher.utter_message(text=f"The population of {country} is {number} million. Tell me if you want to know more.")  	
                     else:
                          dispatcher.utter_message(text=f"Very sorry, there's a problem right now :(")
                 break

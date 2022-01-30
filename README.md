@@ -69,7 +69,7 @@ python -m rasa_sdk.endpoint --actions actions
 
 Further improvments:
 
-- Converting population API response (lakhs and crores) to millions.
+- Converting population API response (lakhs and crores) to millions. >> Done!
 - More stories.
 - entities coming alone.
 
