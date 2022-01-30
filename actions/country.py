@@ -6,12 +6,12 @@ url = "https://qcooc59re3.execute-api.us-east-1.amazonaws.com/dev/getCountries"
 
 def check_country(country):
     '''
-    this function checks if the wanted country in the list or not
+    this function checks if the wanted country in the list or not and overcoming upper and lower case problem.
     INPUTS:
-     country: title of the country
+     country: the entered title of the country
     OUTPUT:
      flag: True if the country exist in the list
-     country: 
+     is_country[0][1]: string of the title of the country in the right format founded in API list.
     '''
     response = requests.get(url)
     countries = response.json()['body']
