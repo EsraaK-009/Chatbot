@@ -45,7 +45,6 @@ nlu:
     - What is the population of [Bahrain](country_name) ?
     - I want to know the population of [Argentina](country_name)
     - Can you tell me the population of [Sudan](country_name) ?
-    - how many people live in [greece](country_name)[greece](country_name)
 - intent: bot_challenge
   examples: |
     - are you a bot?
