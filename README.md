@@ -7,7 +7,7 @@ Simple chatbot using rasa.
 - [Function](#function)
 - [Integration](#integration)
 - [Running Local](#running-local)
-- [Updates](#updates)
+- [Updates](#updates-needed)
 
 
 ### Function
@@ -69,9 +69,12 @@ python -m rasa_sdk.endpoint --actions actions
 
 Further improvments:
 
-- Converting population API response (lahks and crores) to millions.
+- Converting population API response (lakhs and crores) to millions.
 - More stories.
 - entities coming alone.
+
+
+**Final Note:** on branch updates there is a slightly different model, changed some policies.
 
 
 
