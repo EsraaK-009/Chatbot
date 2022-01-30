@@ -84,3 +84,15 @@ stories:
   - action: utter_goodbye
   
 
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_population
+    entities:
+    - country_name: greece
+    - country_name: greece
+  - slot_was_set:
+    - country_name: greece
+  - action: action_ask_population

@@ -26,12 +26,14 @@ class ActionCapital(Action):
                 country_value = blob['value']
                 is_country, country = check_country(country_value)
                 if is_country:
-                    response = requests.post(client_cap, json ={'country':country[0]})
+                    response = requests.post(client_cap, json ={'country':country})
                     if response.json()['success']==1:
                          capital = response.json()['body']['capital']
-                         dispatcher.utter_message(text=f"The Capital of {country[0]} is {capital}. Tell me if you want to know more.")		
+                         dispatcher.utter_message(text=f"The Capital of {country} is {capital}. Tell me if you want to know more.")
+                         break		
                     else:
                          dispatcher.utter_message(text=f"Very sorry, there's a problem right now :(")
+                         break
         else:
            dispatcher.utter_message(text=f"I can't find the country you wanted. Please write it again")
         return []
@@ -52,10 +54,10 @@ class ActionPopulation(Action):
                 country_value = blob['value']
                 is_country, country = check_country(country_value)
                 if is_country:
-                    response = requests.post(client_cap, json ={'country':country[0]})
+                    response = requests.post(client_pop, json ={'country':country})
                     if response.json()['success']==1:
                          population = response.json()['body']['population']
-                         dispatcher.utter_message(text=f"There are {population} person in {country[0]}. Tell me if you want to know more.")  		
+                         dispatcher.utter_message(text=f"There are {population} person in {country}. Tell me if you want to know more.")  		
                     else:
                          dispatcher.utter_message(text=f"Very sorry, there's a problem right now :(")
         else:

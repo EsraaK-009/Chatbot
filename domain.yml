@@ -3,12 +3,11 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- ask_capital
-- ask_population
 - greet
+- ask_population
+- ask_capital
 - goodbye
 - bot_challenge
-
 entities:
 - country_name
 slots:
@@ -29,7 +28,6 @@ responses:
   - text: Hello! I'm here to answer your questions about countries and population, feel free to ask me!
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-
 actions:
 - action_ask_capital
 - action_ask_population

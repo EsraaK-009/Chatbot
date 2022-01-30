@@ -31,26 +31,24 @@ nlu:
     - see you later
 - intent: ask_capital
   examples: |
-    - what is the capital of [egypt]{"entity": "country_name"} ?
-    - tell me the capital of [spain]{"entity": "country_name"} 
-    - I want to know the capital of [south korea]{"entity": "country_name"} 
-    - I wanna know the capital of [Libya]{"entity": "country_name"} 
-    - Tell me the capital of the [USA]{"entity": "country_name"} 
-    - Can you tell me the capital of [Sudan]{"entity": "country_name"} ?
-    
-
+    - what is the capital of [egypt](country_name) ?
+    - tell me the capital of [spain](country_name)
+    - I want to know the capital of [south korea](country_name)
+    - I wanna know the capital of [Libya](country_name)
+    - Tell me the capital of the [USA](country_name)
+    - Can you tell me the capital of [Sudan](country_name) ?
 - intent: ask_population
   examples: |
-    - Tell me the population of [Greece]{"entity": "country_name"}
-    - How many inhabitants does [Brazil]{"entity": "country_name"} have?
-    - How many people live in [China]{"entity": "country_name"} ?
-    - What is the population of [Bahrain]{"entity": "country_name"} ?
-    - I want to know the population of [Argentina]{"entity": "country_name"}  
-    - Can you tell me the population of [Sudan]{"entity": "country_name"} ?
+    - Tell me the population of [Greece](country_name)
+    - How many inhabitants does [Brazil](country_name) have?
+    - How many people live in [China](country_name) ?
+    - What is the population of [Bahrain](country_name) ?
+    - I want to know the population of [Argentina](country_name)
+    - Can you tell me the population of [Sudan](country_name) ?
+    - how many people live in [greece](country_name)[greece](country_name)
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
- 
