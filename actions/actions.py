@@ -30,10 +30,10 @@ class ActionCapital(Action):
                     if response.json()['success']==1:
                          capital = response.json()['body']['capital']
                          dispatcher.utter_message(text=f"The Capital of {country} is {capital}. Tell me if you want to know more.")
-                         break		
+                         		
                     else:
                          dispatcher.utter_message(text=f"Very sorry, there's a problem right now :(")
-                         break
+                break
         else:
            dispatcher.utter_message(text=f"I can't find the country you wanted. Please write it again")
         return []
@@ -60,6 +60,7 @@ class ActionPopulation(Action):
                          dispatcher.utter_message(text=f"There are {population} person in {country}. Tell me if you want to know more.")  		
                     else:
                          dispatcher.utter_message(text=f"Very sorry, there's a problem right now :(")
+                break
         else:
            dispatcher.utter_message(text=f"I can't find the country you wanted. Please write it again")
         return []
