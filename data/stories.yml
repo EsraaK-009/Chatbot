@@ -1,0 +1,86 @@
+version: "3.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_capital 
+  - action: action_ask_capital
+  - intent: ask_population
+  - action: action_ask_population
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: bot_challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+- story: challenge long
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: ask_capital 
+  - action: action_ask_capital
+  - intent: goodbye
+  - action: utter_goodbye
+  
+  
+- story: me challenge
+  steps:
+  - intent: ask_capital 
+  - action: action_ask_capital
+  - intent: ask_capital 
+  - action: action_ask_capital
+  - intent: ask_capital 
+  - action: action_ask_capital
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_capital
+    entities:
+    - country_name: Egypt
+  - action: action_ask_capital
+  - intent: ask_capital
+    entities:
+    - country_name: India
+  - action: action_ask_capital
+  
+- story: story 2 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: ask_capital 
+  - action: action_ask_capital
+  - intent: ask_population
+  - action: action_ask_population
+  - intent: goodbye
+  - action: utter_goodbye
+  
+  
+- story: story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: ask_population
+  - action: action_ask_population
+  - intent: goodbye
+  - action: utter_goodbye
+  
+
