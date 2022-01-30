@@ -1,5 +1,7 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
+recipe: default.v1
+
 language: en
 pipeline:
   - name: WhitespaceTokenizer
@@ -11,9 +13,11 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
   - name: DIETClassifier
+    constrain_similarities: True
     epochs: 100
   - name: EntitySynonymMapper
   - name: ResponseSelector
+    constrain_similarities: True
     epochs: 100
 
 # Configuration for Rasa Core.
@@ -22,3 +26,4 @@ policies:
   - name: MemoizationPolicy
   - name: TEDPolicy
     epochs: 100
+  - name: "RulePolicy"
